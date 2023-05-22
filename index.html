@@ -42,7 +42,7 @@
 
 <body>
 	<div id="gameContainer">
-		<canvas id="unity-canvas" data-pixel-art=""></canvas>
+		<canvas id="unity-canvas" data-pixel-art="false"></canvas>
 		<script src="Build/TheLeadershipGameSolArt.loader.js"></script>
 		<script>
 			var canvas = document.querySelector("#unity-canvas");
@@ -57,7 +57,7 @@
 			};
 			var scaleToFit;
 			try {
-				scaleToFit = !!JSON.parse("");
+				scaleToFit = !!JSON.parse("true");
 			} catch (e) {
 				scaleToFit = true;
 			}
@@ -75,14 +75,14 @@
 					w = window.innerWidth;
 					h = window.innerHeight;
 
-					var r = 720 / 1280;
+					var r = 720 / 960;
 
 					if (w * r > window.innerHeight) {
 						w = Math.min(w, Math.ceil(h / r));
 					}
 					h = Math.floor(w * r);
 				} else {
-					w = 1280;
+					w = 960;
 					h = 720;
 				}
 
